@@ -41,7 +41,7 @@ const nav = useNavigate()
       <>
      
 
-      <div className={`${t ? 'bg-[#0b1a2d]   text-white' : 'bg-orange-100 text-blue-950'} md:mx-10 mx-1 mt-10 p-5 rounded-lg  min-h-[550px]   mb-45 flex flex-col items-center border border-orange-500`}>
+      <div className={`${t ? 'bg-[#0b1a2d]  text-white' : 'bg-orange-100 text-blue-950'} md:mx-10 mx-1 mt-10 p-5 rounded-lg  min-h-[550px]   mb-45 flex flex-col items-center border border-orange-500`}>
         <h1 className='text-2xl font-bold mb-6 text-orange-800'>
           Hostel Block D{no} - Room {room}
         </h1>
@@ -49,12 +49,12 @@ const nav = useNavigate()
 
         <div className='p-6 bg-orange-50  rounded-lg shadow-md w-full flex flex-col items-center'>
           <div className='text-orange-700 font-semibold text-xl mb-3'>
-            Room {room} Details
+            Room {room} people 
           </div>
 
           {loading ? <Loader/> : 
 
-          <div className='w-fit flex gap-10 items-center justify-between'>
+          <div className='w-fit flex md:flex-row flex-col  gap-10 items-center justify-between'>
             {roomi===null || roomi.length ===0 ? (
 <Nodata/>
 ) : (
