@@ -37,7 +37,7 @@ const nav = useNavigate()
        
         <div className={`mb-6 p-4 ${t?"border-1 border-amber-100 text-white":"bg-purple-50 "} flex items-center flex-col rounded-lg shadow-sm`}>
           <h2 className='text-purple-700 font-semibold mb-3'>Floor 1</h2>
-          <div className='flex flex-wrap gap-4'>
+          <div className='flex flex-wrap items-center justify-center gap-4'>
             {floors[0].map((room) => (
               <Link key={room} to={`/hostel/${no}/${room}`}>
               <div
@@ -54,7 +54,7 @@ const nav = useNavigate()
         {/* Floor 2 */}
         <div className={`mb-6 p-4 ${t?"border-1 border-amber-100 text-white":"bg-purple-50 "} flex items-center flex-col rounded-lg shadow-sm`}>
           <h2 className='text-purple-700 font-semibold mb-3'>Floor 2</h2>
-          <div className='flex flex-wrap gap-4'>
+          <div className='flex flex-wrap items-center justify-center gap-4'>
             {floors[1].map((room) => (
                 <Link key={room} to={`/hostel/${no}/${room}`}>
               <div
@@ -70,7 +70,7 @@ const nav = useNavigate()
         {/* Floor 3 */}
         <div className={`mb-6 p-4 ${t?"border-1 border-amber-100 text-white":"bg-purple-50 "} flex items-center flex-col rounded-lg shadow-sm`}>
           <h2 className='text-purple-700 font-semibold mb-3'>Floor 3</h2>
-          <div className='flex flex-wrap gap-4'>
+          <div className='flex items-center justify-center flex-wrap gap-4'>
             {floors[2].map((room) => (
                 <Link key={room} to={`/hostel/${no}/${room}`}>
               <div
