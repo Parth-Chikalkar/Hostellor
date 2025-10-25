@@ -16,9 +16,11 @@ function Register({s,t}) {
   const [password , setpassword] = useState('');
   const [phNo , setphNo] = useState(''); 
   const navigate = useNavigate();
+  const [loading,setLoading]=useState(false);
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
+    setLoading(true);
 try {
     const res = await api.post("/users/signup",{prn , name , address , hostelNo , roomNo , gaurdianNo , password ,phNo});
     toast.success(res.data.message); 
@@ -30,6 +32,9 @@ try {
   
 } catch (error) {
  toast.error("Error happened , try again later !")  
+}
+finally{
+  setLoading(false);
 }
   }
   return (
@@ -128,9 +133,8 @@ try {
         </div>
           <button
             type='submit'
-            className='mt-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 rounded-xl shadow-md transition duration-300 ease-in-out'
-          >
-            Register
+            className={`${loading ? "bg-orange-400" :"bg-orange-600"} mt-4  hover:bg-orange-700 text-white font-semibold py-2 rounded-xl shadow-md transition duration-300 ease-in-out`}>
+            {loading ? "Registering.. " :"Register"}
           </button>
           <p className='text-sm mx-auto '>Go Back <Link className='text-orange-700' to='/'>Home</Link></p>
         </form>

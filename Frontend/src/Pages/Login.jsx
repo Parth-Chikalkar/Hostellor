@@ -11,13 +11,15 @@ function Login({s,t}) {
    const [prn , setprn] = useState('');
    const [password , setpassword] = useState('');
    const navigate = useNavigate();
+   const [loading, setLoading] = useState(false)
    const handleSubmit = async (e)=>{
     e.preventDefault();
     try {
+      setLoading(true);
       const res = await api.post('/users/login',{ prn , password});
       
       if(res.data.succes){
-        toast.success(res.data.message);
+      toast.success(res.data.message);
       localStorage.setItem("token" ,res.data.token);
       navigate('/')
       }
@@ -27,6 +29,8 @@ function Login({s,t}) {
     } catch (error) {
        toast.error(error);
        
+    } finally {
+      setLoading(false);
     }
    }
   return (
@@ -54,9 +58,10 @@ function Login({s,t}) {
           />
           <button
             type='submit'
-            className='mt-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 rounded-xl shadow-md transition duration-300 ease-in-out'
-          >
-            Login
+            disabled={loading}
+            className={`mt-4 ${loading ? "bg-purple-400" :"bg-purple-600 hover:bg-purple-700"}   text-white font-semibold py-2 rounded-xl shadow-md transition duration-300 ease-in-out
+          `}>
+              {loading ? 'Logging in...' : 'Login'}
           </button>
           <p className='text-sm mx-auto '>Don't have an acc ? <Link className='text-purple-700' to='/register'>Register</Link></p>
         </form>
