@@ -37,7 +37,7 @@ const nav = useNavigate()
   return (
     <div className={`${t ? 'bg-[#0b1a2d] text-white' : 'bg-white text-blue-950'}`}>
  <Navbar s={s} t={t} />
-    {room>=1 && room<=30 && no>=5 && no<=8 ? 
+    {room>=1 && room<=36 && no>=5 && no<=8 ? 
       <>
      
 
