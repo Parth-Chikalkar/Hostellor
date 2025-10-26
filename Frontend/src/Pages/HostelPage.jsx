@@ -8,8 +8,8 @@ function HostelPage({s,t}) {
   const { no } = useParams();
   const cookie = localStorage.getItem('token');
 
-  const rooms = Array.from({ length: 30 }, (_, i) => i + 1);
-  const roomsPerFloor = 10;
+  const rooms = Array.from({ length: 36 }, (_, i) => i + 1);
+  const roomsPerFloor = 12;
   const floors = [];
   for (let i = 0; i < rooms.length; i += roomsPerFloor) {
     floors.push(rooms.slice(i, i + roomsPerFloor));

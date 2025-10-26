@@ -89,7 +89,7 @@ finally{
              onChange={(e)=>setroomNo(e.target.value)}
             placeholder="Room No"
             min={1}
-            max={30}
+            max={36}
             className='p-3 border border-orange-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400'
           />
           <input
